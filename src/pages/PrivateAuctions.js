@@ -623,20 +623,21 @@ const PropertyList = styled.div`
   overflow-y: auto;
 `;
 
-const PropertyCard = styled.div`
-  border: 1px solid ${props => props.selected ? '#4361ee' : '#ddd'};
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: ${props => props.selected ? '#f0f4ff' : 'white'};
-  
-  &:hover {
-    border-color: #4361ee;
-    background-color: #f8f9fa;
-  }
-`;
+// This component is already defined above
+// const PropertyCard = styled.div`
+//   border: 1px solid ${props => props.selected ? '#4361ee' : '#ddd'};
+//   border-radius: 8px;
+//   padding: 1rem;
+//   margin-bottom: 1rem;
+//   cursor: pointer;
+//   transition: all 0.3s ease;
+//   background-color: ${props => props.selected ? '#f0f4ff' : 'white'};
+//   
+//   &:hover {
+//     border-color: #4361ee;
+//     background-color: #f8f9fa;
+//   }
+// `;
 
 const PrivateAuctions = () => {
   const { currentUser, userProfile } = useAuth();
