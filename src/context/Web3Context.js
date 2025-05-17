@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useState, useEffect, useCallback, useContext } from 'react';
 import { ethers } from 'ethers';
 import detectEthereumProvider from '@metamask/detect-provider';
 
@@ -8,6 +8,9 @@ import PropertyMarketplaceArtifact from '../artifacts/contracts/PropertyMarketpl
 
 // Create context
 export const Web3Context = createContext();
+
+// Custom hook to use the Web3 context
+export const useWeb3 = () => useContext(Web3Context);
 
 // Contract addresses (will be set after deployment)
 const NFT_CONTRACT_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; // Placeholder

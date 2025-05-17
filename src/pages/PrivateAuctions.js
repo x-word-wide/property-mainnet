@@ -49,6 +49,40 @@ const Tab = styled.button`
   }
 `;
 
+// Additional styled components for property cards
+const PropertyCard = styled.div`
+  background-color: ${props => props.selected ? '#f0f4ff' : 'white'};
+  border: 1px solid ${props => props.selected ? '#4361ee' : '#ddd'};
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: ${props => props.onClick ? 'pointer' : 'default'};
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: #4361ee;
+    box-shadow: ${props => props.onClick ? '0 5px 15px rgba(0, 0, 0, 0.05)' : 'none'};
+  }
+`;
+
+const PropertyName = styled.h3`
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+`;
+
+const PropertyAddress = styled.p`
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+`;
+
+const PropertyTokenId = styled.p`
+  color: #4361ee;
+  font-size: 0.9rem;
+  font-weight: 500;
+`;
+
 const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 350px;
@@ -112,11 +146,12 @@ const AuctionStatus = styled.div`
     props.status === 'private' ? '#d97706' : '#e53e3e'};
 `;
 
-const PropertyAddress = styled.h3`
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-`;
+// This component is already defined above
+// const PropertyAddress = styled.h3`
+//   font-size: 1.2rem;
+//   margin-bottom: 0.5rem;
+//   color: #333;
+// `;
 
 const PropertyFeatures = styled.div`
   display: flex;

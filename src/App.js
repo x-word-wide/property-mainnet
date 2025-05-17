@@ -1,6 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { Web3Provider } from './context/Web3Context';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import './App.css';
 
 // Components
 import Navbar from './components/Navbar';
@@ -41,12 +44,7 @@ const Terms = lazy(() => import('./pages/Terms'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Cookies = lazy(() => import('./pages/Cookies'));
 
-// Context
-import { Web3Provider } from './context/Web3Context';
-import { AuthProvider, useAuth } from './context/AuthContext';
-
-// Styling
-import './App.css';
+// Import these at the top with other imports
 
 const AppContainer = styled.div`
   display: flex;
