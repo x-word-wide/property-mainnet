@@ -1,6 +1,78 @@
-# Getting Started with Create React App
+# Property Mainnet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Property Mainnet is a revolutionary NFT marketplace for real estate properties, leveraging blockchain technology to provide secure, transparent, and efficient property ownership transfers.
+
+![Property Mainnet Logo](/public/logo.png)
+
+## Features
+
+- **Property NFTs**: Tokenize real estate properties as NFTs on the blockchain
+- **Property Verification**: Rigorous verification process including document review and physical inspection
+- **Fractional Ownership**: Enable multiple investors to own portions of a single property
+- **Auctions**: Public and private auction functionality for property sales
+- **Property Modifications**: Request and track modifications to physical properties
+- **User Authentication**: Secure user accounts with verification
+- **Wallet Integration**: Connect your crypto wallet to buy, sell, and trade Property NFTs
+
+## Technology Stack
+
+- **Frontend**: React.js, Styled Components
+- **Blockchain**: Ethereum, Solidity Smart Contracts
+- **Authentication**: Firebase Authentication
+- **Storage**: IPFS for decentralized storage of property metadata and images
+- **Development**: Hardhat for smart contract development and testing
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+- MetaMask or another Ethereum wallet
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/x-word-wide/property-mainnet.git
+   cd property-mainnet
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Set up environment variables:
+   Create a `.env` file in the root directory with the following variables:
+   ```
+   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
+   REACT_APP_CONTRACT_ADDRESS=your_deployed_contract_address
+   ```
+
+4. Start the development server:
+   ```
+   npm start
+   ```
+
+### Smart Contract Deployment
+
+1. Compile the smart contracts:
+   ```
+   npx hardhat compile
+   ```
+
+2. Deploy to a test network:
+   ```
+   npx hardhat run scripts/deploy.js --network rinkeby
+   ```
+
+3. Update the contract address in your `.env` file
 
 ## Available Scripts
 
@@ -11,60 +83,71 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+property-mainnet/
+├── contracts/                # Smart contracts
+│   ├── RealEstateNFT.sol     # ERC721 contract for property NFTs
+│   └── PropertyMarketplace.sol # Marketplace contract
+├── public/                   # Public assets
+├── scripts/                  # Deployment scripts
+├── src/
+│   ├── components/           # Reusable UI components
+│   ├── context/              # React context providers
+│   ├── firebase/             # Firebase configuration
+│   ├── pages/                # Page components
+│   ├── utils/                # Utility functions
+│   ├── App.js                # Main application component
+│   └── index.js              # Entry point
+└── test/                     # Smart contract tests
+```
 
-### `npm run eject`
+## Key Features Explained
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Property Verification
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Before a property can be tokenized as an NFT, it undergoes a rigorous verification process:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Document Review**: Property deeds, titles, and other legal documents are verified
+2. **Physical Inspection**: An inspector visits the property to confirm its condition and details
+3. **Verification Certificate**: Once approved, the property receives a verification certificate
+4. **NFT Creation**: The verified property can then be tokenized as an NFT
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Fractional Ownership
 
-## Learn More
+Property Mainnet enables fractional ownership of real estate:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Tokenization**: Property owners can divide their property into multiple tokens
+2. **Investment Opportunities**: Investors can purchase fractions of high-value properties
+3. **Dividend Distribution**: Rental income and other proceeds are distributed proportionally
+4. **Secondary Market**: Fractional tokens can be traded on the marketplace
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Private Auctions
 
-### Code Splitting
+Property owners can create exclusive auction events:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Invitation-Only**: Only invited users can view and participate in private auctions
+2. **Customizable Terms**: Set reserve prices, auction duration, and other parameters
+3. **Secure Bidding**: All bids are recorded on the blockchain for transparency
+4. **Automatic Settlement**: When the auction ends, ownership transfers automatically
 
-### Analyzing the Bundle Size
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Advanced Configuration
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any inquiries, please reach out to info@propertymainnet.com
